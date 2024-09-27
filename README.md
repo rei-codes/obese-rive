@@ -1,16 +1,22 @@
 # sizey
 
-A new Flutter project.
+> android > app > build.gradle
+```gradle
+    ndkVersion = flutter.ndkVersion // or latest version "27.1.12297006"
+    // ndkVersion = "25.1.8937393" // uncomment this line to fix the problem
+```
 
-## Getting Started
+### Before
+no rive -> (18.2MB)
+rive -> (70.0MB)
 
-This project is a starting point for a Flutter application.
+### After
+ndkVersion "25.1.8937393"
 
-A few resources to get you started if this is your first Flutter project:
+no rive -> (18.2MB)
+rive -> (25.4MB)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+`flutter build apk --release`
+
+`flutter build apk --target-platform android-arm64 --analyze-size`
